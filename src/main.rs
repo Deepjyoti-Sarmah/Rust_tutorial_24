@@ -11,7 +11,6 @@
 //     }
 // }
 
-
 // fibonacci series
 // fn main() {
 //     println!("{}", fib(3));
@@ -24,7 +23,7 @@
 //     if num == 0 {
 //         return 0;
 //     }
-    
+
 //     if num == 1 {
 //         return 1;
 //     }
@@ -71,7 +70,7 @@
 // impl Rect {
 //    fn area(&self) -> i32 {
 //     self.width * self.height
-//    } 
+//    }
 
 //    fn perimeter(&self) -> i32 {
 //     2 * (self.width + self.height)
@@ -99,26 +98,100 @@
 //     println!("noSelf is {}", Rect::no_self());
 // }
 
-
 //Enums
-enum Shape {
-    Rectangle(f64, f64), // width, height
-    Circle(f64), // radius
-}
+// enum Shape {
+//     Rectangle(f64, f64), // width, height
+//     Circle(f64), // radius
+// }
 
+// fn main() {
+//     let my_shape = Shape::Rectangle(2.0,4.0);
+//     println!("{}",print_area(my_shape));
+
+//     let my_circle = Shape::Circle(2.0);
+//     println!("{}",print_area(my_circle));
+// }
+
+// fn print_area(shape: Shape) -> f64 {
+// println!("hi there");
+//     let area = match shape {
+//         Shape::Rectangle(a, b) => a * b,
+//         Shape::Circle(r) => 3.14 * r * r,
+//     };
+//     return area;
+// }
+//
+
+// enum CustomOption {
+//     Some(i32),
+//     None
+// }
+
+// Options -> Null value
+// fn find_first_a(s: String) -> CustomOption{
+//fn find_first_a(s: String) -> Option<i32> {
+//     for (index, char) in s.chars().enumerate() {
+//         if char == 'a' {
+//             return CustomOption::Some(index as i32);
+//            return Some(index as i32);
+//            return index as i32;
+//         }
+//     }
+//     return CustomOption::None;
+//    return None;
+//    return -1;
+// }
+
+// fn main() {
+//     let index = find_first_a(String::from("preet"));
+
+//     match index {
+//         CustomOption::Some(value) => println!("index of {}", value),
+//         CustomOption::None => println!("a not found"),
+//     }
+//    if index == -1 {
+//        println!("a is not found");
+//    } else {
+//        println!("index is {}", index);
+//    }
+// }
+
+//Result -> error handling
+// use std::fs::read_to_string;
+
+// fn main() {
+//     let result = read_to_string("a.txt");
+
+//     match result {
+//         Ok(data) => println!("{}", data),
+//         Err(err) => println!("Error reading file {}", err),
+//     }
+// }
+
+// external package
+// use chrono::{Local, Utc};
+
+// fn main() {
+//     let now = Utc::now();
+//     println!("Current Date and time in UTC: {}", now);
+
+//     let formatted = now.format("%Y-%m-%d %H:%M:%S");
+//     println!("Formatted date and time: {}", formatted);
+
+//     let local = Local::now();
+//     println!("Current date and time in local: {}", local);
+// }
+//
+
+// Move and ownership
 fn main() {
-    let my_shape = Shape::Rectangle(2.0,4.0);
-    println!("{}",print_area(my_shape));
+    let s1 = String::from("Deep");
 
-    let my_circle = Shape::Circle(2.0);
-    println!("{}",print_area(my_circle));
+    print_str(s1);
+
+//    println!("s1 {}", s1);
 }
 
-fn print_area(shape: Shape) -> f64 {
-    // println!("hi there");
-    let area = match shape {
-        Shape::Rectangle(a, b) => a * b,
-        Shape::Circle(r) => 3.14 * r * r,
-    };
-    return area;
+fn print_str(s2: String) {
+    println!("s2 {}", s2);
 }
